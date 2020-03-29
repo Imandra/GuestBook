@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>JS - исправить ошибку в коде</title>
+</head>
+<body>
+<script>
+    var c = {
+        'b': 3,
+        'c': function() {
+            var that = this;
+            window.setTimeout(
+                function() {
+                    that.d();
+                }, 4);
+        },
+        'd': function() {
+            alert(this.b);
+        }
+    };
+
+    c.c();
+
+    // Ошибка в том, что в функции setTimeout значением this является глобальный объект window.
+    // Необходимо явно задать значение this.
+</script>
+</body>
+</html>
