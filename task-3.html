@@ -8,14 +8,14 @@
 <script>
     var c = {
         'b': 3,
-        'c': function() {
+        'c': function () {
             var that = this;
             window.setTimeout(
-                function() {
+                function () {
                     that.d();
                 }, 4);
         },
-        'd': function() {
+        'd': function () {
             alert(this.b);
         }
     };
